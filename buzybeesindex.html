@@ -12,7 +12,7 @@
       --honey:      #E8A500;
       --honey-deep: #C8860A;
       --honey-wall: #D4921A;   /* exact amber wall colour */
-      --bg:         #F0A500;   /* page background – rich honey yellow */
+      --bg:         #f7d053;   /* page background – rich honey yellow */
       --dark:       #1A1A1A;
       --teal:       #2E6B5E;   /* chair / accent teal */
       --cream:      #FFF8E7;
@@ -49,7 +49,7 @@
       top: 0; left: 0; right: 0;
       z-index: 1000;
       height: 72px;
-      background: var(--black-panel);
+      background: #ffffff;
       display: flex;
       align-items: center;
       padding: 0 32px;
@@ -62,7 +62,7 @@
       display: flex;
       align-items: center;
       gap: 8px;
-      color: var(--honey);
+      color: var(--dark);
       font-size: 14px;
       font-weight: 600;
       letter-spacing: .5px;
@@ -81,7 +81,11 @@
       left: 50%;
       transform: translateX(-50%);
     }
-    .nav-logo svg { height: 52px; width: auto; }
+    .nav-logo img {
+    height: 200px;
+    width: auto;
+    display: block;
+}
 
     /* Right – buttons */
     .nav-actions {
@@ -114,7 +118,7 @@
     }
     .nav-btn.outline {
       background: transparent;
-      color: var(--honey);
+      color: var(--dark);
     }
     .nav-btn:hover {
       transform: translateY(-2px);
@@ -242,7 +246,12 @@
       letter-spacing: -1px;
       line-height: 1;
     }
-
+    .hero-logo{
+    width: min(650px,90%);
+    height:auto;
+    display:block;
+    margin:auto;
+    margin-top:24px;}
     /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
        DIVIDER
     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
@@ -258,9 +267,24 @@
        MENU SECTION
     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
     #menu {
-      background: var(--black-panel);
+      background: url('menu-bg.png') center center/cover no-repeat
       padding: 80px 0 100px;
     }
+    .menu-banner {
+    height: 500px;
+    border-radius: 25px;
+    margin-bottom: 50px;
+
+    background-image: url("menu-bg.png");
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+}
 
     .menu-inner {
       max-width: 1200px;
@@ -385,15 +409,17 @@
     }
 
     .contact-card {
-      background: var(--dark);
-      border-radius: 8px;
+      background: #ffffff;
+      border-radius: 40px 15px 40px 15px;
       padding: 36px 32px;
       display: flex;
       align-items: flex-start;
       gap: 20px;
-      transition: transform .2s;
+      transition: all .3s ease;
+      box-shadow: 0 8px 25px rgba(0,0,0,.08);
+
     }
-    .contact-card:hover { transform: translateY(-4px); }
+    .contact-card:hover { transform: translateY(-6px) scale(1.02); }
 
     .contact-icon {
       width: 48px;
@@ -406,7 +432,24 @@
       flex-shrink: 0;
     }
     .contact-icon svg { width: 24px; height: 24px; }
+.instagram-btn {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 12px 22px;
 
+    background: #E1306C;
+    color: white !important;
+
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 700;
+
+    transition: all .25s ease;
+}
+
+.instagram-btn:hover {
+    transform: scale(1.05);
+}
     .contact-card-body h4 {
       font-size: 10px;
       letter-spacing: 3px;
@@ -418,7 +461,7 @@
     .contact-card-body p, .contact-card-body a {
       font-size: 15px;
       font-weight: 600;
-      color: var(--cream);
+      color: #2E6B5E;
       text-decoration: none;
       line-height: 1.6;
     }
@@ -443,6 +486,14 @@
     /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
        FOOTER
     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    .creator-logo {
+    width: 80px;
+    transition: transform .25s ease;
+}
+
+.creator-logo:hover {
+    transform: scale(1.08);
+}
     footer {
       background: var(--black-panel);
       padding: 32px;
@@ -452,6 +503,56 @@
       letter-spacing: 1px;
     }
     footer span { color: var(--honey); }
+
+    .creator-logo-btn img{
+      width:120px;
+      margin-top:14px;
+      transition:transform .2s ease;
+    }
+    .creator-logo-btn:hover img{
+      transform:scale(1.08);
+    }
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       REVIEWS
+    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    .reviews-section{
+padding:80px 5%;
+text-align:center;
+}
+
+.reviews-section h2{
+color:#355E3B;
+font-size:3rem;
+margin-bottom:50px;
+}
+
+.review-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+}
+
+.review-card{
+background:#FFF8E7;
+border-radius:35px 15px 35px 15px;
+padding:25px;
+color:#355E3B;
+box-shadow:0 8px 20px rgba(0,0,0,.08);
+transition:.3s;
+}
+
+.review-card:hover{
+transform:translateY(-8px);
+}
+
+.review-card h3{
+margin:10px 0;
+color:#355E3B;
+}
+
+.review-card p{
+line-height:1.7;
+}
 
     /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
        RESPONSIVE
@@ -475,7 +576,7 @@
   <nav>
     <!-- Left: Phone -->
     <div class="nav-phone">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <svg width="16" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.42 2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 7.2 7.2l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
       </svg>
       <span class="phone-label">+91 97115 77712</span>
@@ -483,33 +584,7 @@
 
     <!-- Center: Logo (SVG inline) -->
     <div class="nav-logo">
-      <svg viewBox="0 0 220 56" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Buzy Bee Logo">
-        <!-- hexagon frame -->
-        <polygon points="28,4 52,4 64,25 52,46 28,46 16,25" fill="#E8A500" opacity=".15" stroke="#E8A500" stroke-width="2"/>
-        <!-- bee body -->
-        <ellipse cx="40" cy="25" rx="11" ry="8" fill="#E8A500"/>
-        <!-- stripes -->
-        <rect x="33" y="21" width="3" height="8" rx="1.5" fill="#1A1A1A"/>
-        <rect x="39" y="21" width="3" height="8" rx="1.5" fill="#1A1A1A"/>
-        <!-- wings -->
-        <ellipse cx="36" cy="18" rx="6" ry="3.5" fill="white" opacity=".75" transform="rotate(-20 36 18)"/>
-        <ellipse cx="44" cy="18" rx="6" ry="3.5" fill="white" opacity=".75" transform="rotate(20 44 18)"/>
-        <!-- stinger -->
-        <path d="M51 25 L56 25" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round"/>
-        <!-- antennae -->
-        <path d="M35 17 Q32 11 29 9" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round" fill="none"/>
-        <circle cx="29" cy="9" r="2" fill="#E8A500"/>
-        <path d="M42 17 Q44 11 47 9" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round" fill="none"/>
-        <circle cx="47" cy="9" r="2" fill="#E8A500"/>
-
-        <!-- BUZY BEE text -->
-        <text x="72" y="20" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="18" font-weight="900" fill="#E8A500" letter-spacing="1">BUZY</text>
-        <text x="72" y="42" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="18" font-weight="900" fill="#FFF8E7" letter-spacing="1">BEE</text>
-        <!-- small accent line -->
-        <line x1="72" y1="27" x2="175" y2="27" stroke="#E8A500" stroke-width=".8" opacity=".4"/>
-        <!-- café tag -->
-        <text x="130" y="42" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#888" letter-spacing="3">CAFÉ</text>
-      </svg>
+      <img src="logo.png" alt="Buzy Bee Logo" style="height:120px;width:auto;">
     </div>
 
     <!-- Right: Buttons -->
@@ -537,8 +612,8 @@
     </div>
 
     <p class="hero-eyebrow">1st Floor, CM Market · Rampur Jagir, Greater Noida</p>
-    <h1 class="hero-title">BUZY<br><span>BEE</span></h1>
-    <p class="hero-sub">A cosy café where every sip and bite feels like pure golden honey. Indian, Chinese, Continental &amp; the best brews in Greater Noida.</p>
+    <img src="logo.png" alt="Buzy Bee Cafe" class="hero-logo">
+    <p class="hero-sub">A cozy café where every sip and bite feels like pure golden honey. Indian, Chinese, Continental &amp; the best brews in Greater Noida.</p>
     <div class="hero-cta">
       <a href="#menu" class="btn-large btn-dark">Explore Menu</a>
       <a href="#contact" class="btn-large btn-teal">Find Us</a>
@@ -546,301 +621,94 @@
   </section>
 
   <!-- ══════════════════════════════
-       MENU SECTION
+       reviews
   ══════════════════════════════ -->
-  <section id="menu">
-    <div class="menu-inner">
-      <div class="menu-header">
-        <span class="section-label">What We Serve</span>
-        <h2 class="section-title">Our <span>Menu</span></h2>
-      </div>
+  <section id="reviews" class="reviews-section">
 
-      <!-- Tabs -->
-      <div class="menu-tabs">
-        <button class="tab-btn active" onclick="switchTab('beverages', this)">Beverages</button>
-        <button class="tab-btn" onclick="switchTab('snacks', this)">Snacks & Starters</button>
-        <button class="tab-btn" onclick="switchTab('mains', this)">Mains</button>
-        <button class="tab-btn" onclick="switchTab('mocktails', this)">Mocktails</button>
-      </div>
+    <h2>🐝 What Our Customers Say</h2>
 
-      <!-- ── BEVERAGES ── -->
-      <div class="menu-panel active" id="tab-beverages">
-        <div class="menu-grid">
+    <p class="reviews-subtitle" style="color:#355E3B; font-size:1.2rem; margin-bottom:40px;">
+        Loved by families, foodies, and vegetarians across Greater Noida.
+    </p>
 
-          <div class="menu-category">
-            <h3>Iced Brews</h3>
-            <div class="menu-item"><div><div class="menu-item-name">Classic Cold Coffee</div></div><div class="menu-item-price">₹155</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Hazelnut Cold Coffee</div></div><div class="menu-item-price">₹170</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Mocha Cold Coffee</div></div><div class="menu-item-price">₹170</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Frappe</div></div><div class="menu-item-price">₹155</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Iced Americano</div></div><div class="menu-item-price">₹155</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Iced Latte</div></div><div class="menu-item-price">₹155</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Ice Tea</div></div><div class="menu-item-price">₹90</div></div>
-          </div>
+    <div class="review-grid">
 
-          <div class="menu-category">
-            <h3>Hot Brews</h3>
-            <div class="menu-item"><div><div class="menu-item-name">Cappuccino</div></div><div class="menu-item-price">₹125</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Cafe Latte</div></div><div class="menu-item-price">₹115</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Americano</div></div><div class="menu-item-price">₹125</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Cafe Mocha</div></div><div class="menu-item-price">₹140</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Hazelnut Mocha</div></div><div class="menu-item-price">₹140</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Espresso Shots (30ml)</div></div><div class="menu-item-price">₹105</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Doppio Shots (60ml)</div></div><div class="menu-item-price">₹140</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Green Tea</div></div><div class="menu-item-price">₹90</div></div>
-          </div>
-
-          <div class="menu-category">
-            <h3>Shakes</h3>
-            <div class="menu-item"><div><div class="menu-item-name">Choco Shake</div></div><div class="menu-item-price">₹130</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Kit-Kat Shake</div></div><div class="menu-item-price">₹130</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Oreo Shake</div></div><div class="menu-item-price">₹130</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Bee-Go-Mango</div></div><div class="menu-item-price">₹160</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Strawberry Shake</div></div><div class="menu-item-price">₹155</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Banana Honey Milkshake</div></div><div class="menu-item-price">₹160</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Strawberry Banana Milkshake</div></div><div class="menu-item-price">₹160</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Peanut Butter & Chocolate</div></div><div class="menu-item-price">₹160</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Fudge Brownie Shake</div></div><div class="menu-item-price">₹160</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Vanilla Shake</div></div><div class="menu-item-price">₹130</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Blueberry Shake</div></div><div class="menu-item-price">₹180</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Butterscotch Shake</div></div><div class="menu-item-price">₹160</div></div>
-          </div>
-
-          <div class="menu-category">
-            <h3>Others & Desert</h3>
-            <div class="menu-item"><div><div class="menu-item-name">Fresh Lemonade</div></div><div class="menu-item-price">₹60</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Fresh Lime Soda</div></div><div class="menu-item-price">₹120</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Fresh Juice (Seasonal)</div></div><div class="menu-item-price">₹120</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Coke / Diet / Others</div></div><div class="menu-item-price">MRP</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Red Bull</div></div><div class="menu-item-price">MRP</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Mineral Water</div></div><div class="menu-item-price">MRP</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Chocolate Brownie + Ice Cream</div></div><div class="menu-item-price">₹120</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Ice Cream (Vanilla/Strawberry)</div></div><div class="menu-item-price">₹90</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Gulab Jamun</div></div><div class="menu-item-price">₹35</div></div>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- ── SNACKS & STARTERS ── -->
-      <div class="menu-panel" id="tab-snacks">
-        <div class="menu-grid">
-
-          <div class="menu-category">
-            <h3>Fries</h3>
-            <div class="menu-item"><div><div class="menu-item-name">Classic Salted</div></div><div class="menu-item-price">₹99</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Peri Peri Fries</div></div><div class="menu-item-price">₹129</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Chessy Peri Peri Fries</div></div><div class="menu-item-price">₹189</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Cheese Baked Fries</div></div><div class="menu-item-price">₹199</div></div>
-          </div>
-
-          <div class="menu-category">
-            <h3>Wraps</h3>
-            <div class="menu-item"><div><div class="menu-item-name">BB Special</div></div><div class="menu-item-price">₹169</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Veg Aloo Tikki Wrap</div></div><div class="menu-item-price">₹99</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Hara Bhara Kabab Wrap</div></div><div class="menu-item-price">₹149</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Falafel Wrap</div></div><div class="menu-item-price">₹159</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Paneer Wrap</div></div><div class="menu-item-price">₹149</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Crispy Paneer Wrap</div></div><div class="menu-item-price">₹159</div></div>
-          </div>
-
-          <div class="menu-category">
-            <h3>Burgers</h3>
-            <div class="menu-item"><div><div class="menu-item-name">BB Special</div></div><div class="menu-item-price">₹169</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Veg Aloo Tikki Burger</div></div><div class="menu-item-price">₹59</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Veg Burger</div></div><div class="menu-item-price">₹69</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Tandoori Veg Burger</div></div><div class="menu-item-price">₹99</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Crispy Paneer Burger</div></div><div class="menu-item-price">₹159</div></div>
-          </div>
-
-          <div class="menu-category">
-            <h3>Sandwich Bar</h3>
-            <div class="menu-item"><div><div class="menu-item-name">BB Special</div></div><div class="menu-item-price">₹250</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Peri Peri Paneer</div></div><div class="menu-item-price">₹190</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Veg Tandoori</div></div><div class="menu-item-price">₹190</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Tandoori Paneer Club</div></div><div class="menu-item-price">₹220</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Spinach & Corn</div></div><div class="menu-item-price">₹260</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Cheese & Corn</div></div><div class="menu-item-price">₹250</div></div>
-          </div>
-
-          <div class="menu-category">
-            <h3>Garlic Bread</h3>
-            <div class="menu-item"><div><div class="menu-item-name">Classic Garlic Bread</div></div><div class="menu-item-price">₹120</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Mexican Garlic Bread</div></div><div class="menu-item-price">₹160</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Paneer Garlic Bread</div></div><div class="menu-item-price">₹200</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Paneer Stuffed Garlic Bread</div></div><div class="menu-item-price">₹220</div></div>
-          </div>
-
-          <div class="menu-category">
-            <h3>Bruschetta & Salad</h3>
-            <div class="menu-item"><div><div class="menu-item-name">Mushroom and Cheese Bruschetta</div></div><div class="menu-item-price">₹180</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Avocado Cheese Bruschetta</div></div><div class="menu-item-price">₹220</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Caesar Salad</div></div><div class="menu-item-price">₹200</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Fresh Farm Veg Salad</div></div><div class="menu-item-price">₹220</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Paneer Salad</div></div><div class="menu-item-price">₹220</div></div>
-          </div>
-
-          <div class="menu-category">
-            <h3>Chinese Entrée</h3>
-            <div class="menu-item"><div><div class="menu-item-name">Spring Roll</div></div><div class="menu-item-price">₹180</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Chilli Potato</div></div><div class="menu-item-price">₹200</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Honey Chilli Potato</div></div><div class="menu-item-price">₹220</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Chilli Paneer Dry</div></div><div class="menu-item-price">₹250</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Chilli Garlic Mushroom</div></div><div class="menu-item-price">₹250</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Crispy Veg Salt & Pepper</div></div><div class="menu-item-price">₹180</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Crispy Corn Salt & Pepper</div></div><div class="menu-item-price">₹200</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Crispy Paneer Salt & Pepper</div></div><div class="menu-item-price">₹200</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Manchurian Dry</div></div><div class="menu-item-price">₹190</div></div>
-          </div>
-
-          <div class="menu-category">
-            <h3>Tandoor Entrée</h3>
-            <div class="menu-item"><div><div class="menu-item-name">Paneer Sunheri Tikka</div></div><div class="menu-item-price">₹350</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Achari Paneer Tikka</div></div><div class="menu-item-price">₹350</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Makhmali Paneer Tikka</div></div><div class="menu-item-price">₹350</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Pudina Paneer Tikka</div></div><div class="menu-item-price">₹350</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Afghani Paneer Tikka</div></div><div class="menu-item-price">₹350</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Malai Soya Chaap</div></div><div class="menu-item-price">₹240</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Tandoori Soya Chaap</div></div><div class="menu-item-price">₹250</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Tandoori Stuffed Mushroom</div></div><div class="menu-item-price">₹300</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Hara Bhara Kabab</div></div><div class="menu-item-price">₹199</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Veg Seekh Kabab</div></div><div class="menu-item-price">₹199</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Dal ke Sholay</div></div><div class="menu-item-price">₹250</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Tandoori Plater</div></div><div class="menu-item-price">₹440</div></div>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- ── MAINS ── -->
-      <div class="menu-panel" id="tab-mains">
-        <div class="menu-grid">
-
-          <div class="menu-category">
-            <h3>Mexican Bowls & Platers</h3>
-            <div class="menu-item"><div><div class="menu-item-name">Mexican Rice Bowl</div></div><div class="menu-item-price">₹220</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Mushroom Rice Bowl</div></div><div class="menu-item-price">₹220</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Grilled Paneer Mexican Platter</div></div><div class="menu-item-price">₹260</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Grilled Cottage Cheese with Steak</div></div><div class="menu-item-price">₹300</div></div>
-          </div>
-
-          <div class="menu-category">
-            <h3>Burrito</h3>
-            <div class="menu-item"><div><div class="menu-item-name">Veg Burrito</div></div><div class="menu-item-price">₹160</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Bean Cheese Rice Burrito</div></div><div class="menu-item-price">₹180</div></div>
-          </div>
-
-          <div class="menu-category">
-            <h3>Pasta</h3>
-            <div class="menu-item"><div><div class="menu-item-name">Alfredo</div><div class="menu-item-desc">Penne with creamy sauce, white/red, garlic bread</div></div><div class="menu-item-price">₹220</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Arrabiata</div><div class="menu-item-desc">Penne with tomato sauce, garlic bread</div></div><div class="menu-item-price">₹220</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Aglio E Olio</div><div class="menu-item-desc">Penne/Spaghetti, olive oil, garlic, chilli flakes</div></div><div class="menu-item-price">₹210</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Pasta in Two Sauce</div><div class="menu-item-desc">Arrabiata + cheese sauce</div></div><div class="menu-item-price">₹220</div></div>
-          </div>
-
-          <div class="menu-category">
-            <h3>Pizza (Thin Crust)</h3>
-            <div class="menu-item"><div><div class="menu-item-name">Classic Margarita</div></div><div class="menu-item-price">₹160 / ₹299</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Mexican Garden Fresh</div></div><div class="menu-item-price">₹190 / ₹349</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Spicy Paneer & Jalapeno</div></div><div class="menu-item-price">₹210 / ₹379</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Tandoori Paneer Tikka</div></div><div class="menu-item-price">₹190 / ₹349</div></div>
-          </div>
-
-          <div class="menu-category">
-            <h3>Chinese Main</h3>
-            <div class="menu-item"><div><div class="menu-item-name">Hakka Noodles</div></div><div class="menu-item-price">₹200</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Singapoori Noodles</div></div><div class="menu-item-price">₹220</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Chilli Garlic Noodles</div></div><div class="menu-item-price">₹220</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Fried Rice</div></div><div class="menu-item-price">₹149</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Chilli Garlic Fried Rice</div></div><div class="menu-item-price">₹180</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Chilli Paneer Gravy</div></div><div class="menu-item-price">₹250</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Sweet & Sour Vegetables</div></div><div class="menu-item-price">₹220</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Manchurian Gravy</div></div><div class="menu-item-price">₹250</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Chinese Combo</div><div class="menu-item-desc">Eg. Chilli Paneer with Hakka Noodle</div></div><div class="menu-item-price">₹350</div></div>
-          </div>
-
-          <div class="menu-category">
-            <h3>Indian Main</h3>
-            <div class="menu-item"><div><div class="menu-item-name">Dal Makhani</div></div><div class="menu-item-price">₹280</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Yellow Dal Tadka</div></div><div class="menu-item-price">₹250</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Sultani Dal</div></div><div class="menu-item-price">₹250</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Chana Masala</div></div><div class="menu-item-price">₹280</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Paneer Lababdar</div></div><div class="menu-item-price">₹350</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Kadhai Paneer</div></div><div class="menu-item-price">₹350</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Shahi Paneer</div></div><div class="menu-item-price">₹350</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Paneer Makhani</div></div><div class="menu-item-price">₹350</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Paneer Butter Masala</div></div><div class="menu-item-price">₹350</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Paneer Dhaniya Adraki</div></div><div class="menu-item-price">₹350</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Palak Paneer</div></div><div class="menu-item-price">₹350</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Tawa Paneer</div></div><div class="menu-item-price">₹380</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Malai Kofta</div></div><div class="menu-item-price">₹380</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Mashroom Do Pyaza</div></div><div class="menu-item-price">₹300</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Matar Mushroom</div></div><div class="menu-item-price">₹300</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Masala Soya Chaap</div></div><div class="menu-item-price">₹280</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Khadai Soya Chaap</div></div><div class="menu-item-price">₹280</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Kashmiri Dum Aloo</div></div><div class="menu-item-price">₹250</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Hing Jeera Aloo</div></div><div class="menu-item-price">₹220</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Aloo Gobhi Adraki Masala</div></div><div class="menu-item-price">₹250</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Mix Vegetable</div></div><div class="menu-item-price">₹280</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Bhindi Masala</div></div><div class="menu-item-price">₹300</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Paneer Tikka Masala</div></div><div class="menu-item-price">₹380</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Paneer Mashroom</div></div><div class="menu-item-price">₹380</div></div>
-          </div>
-
-          <div class="menu-category">
-            <h3>House of Bread</h3>
-            <div class="menu-item"><div><div class="menu-item-name">Tandoori Roti Plain/Butter</div></div><div class="menu-item-price">₹28/38</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Garlic Naan</div></div><div class="menu-item-price">₹60</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Butter Naan</div></div><div class="menu-item-price">₹50</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Plain Naan</div></div><div class="menu-item-price">₹40</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Stuffed Naan (Potato)</div></div><div class="menu-item-price">₹60</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Stuffed Naan (Paneer/Mix)</div></div><div class="menu-item-price">₹90</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Chur Chur Naan</div></div><div class="menu-item-price">₹70</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Laccha Paratha</div></div><div class="menu-item-price">₹50</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Missi Roti</div></div><div class="menu-item-price">₹55</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Rumaali Roti</div></div><div class="menu-item-price">₹28</div></div>
-          </div>
-
-          <div class="menu-category">
-            <h3>House of Rice & Raita</h3>
-            <div class="menu-item"><div><div class="menu-item-name">Steam Rice</div></div><div class="menu-item-price">₹150</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Jeera Rice</div></div><div class="menu-item-price">₹180</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Veg Pulao</div></div><div class="menu-item-price">₹200</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Veg Loaded Briyani</div></div><div class="menu-item-price">₹280</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Zaikedar Paneer Briyani</div></div><div class="menu-item-price">₹300</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Boondi Raita</div></div><div class="menu-item-price">₹105</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Mix Veg Raita</div></div><div class="menu-item-price">₹135</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Pineapple Raita</div></div><div class="menu-item-price">₹155</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Special Raita</div></div><div class="menu-item-price">₹155</div></div>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- ── MOCKTAILS ── -->
-      <div class="menu-panel" id="tab-mocktails">
-        <div class="menu-grid">
-          <div class="menu-category" style="grid-column: 1 / -1; max-width: 600px;">
-            <h3>Chilled Mocktails</h3>
-            <div class="menu-item"><div><div class="menu-item-name">Virgin Mojito</div></div><div class="menu-item-price">₹165</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Chill-A-Melon</div><div class="menu-item-desc">Watermelon, mint leaves, lemon with soda</div></div><div class="menu-item-price">₹165</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Cucumber Breeze</div><div class="menu-item-desc">Cucumber mint, mint leaves, lemon, pinch of black salt</div></div><div class="menu-item-price">₹165</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Summer Fruit Fizz</div><div class="menu-item-desc">Blueberry, Strawberry, Apple with soda</div></div><div class="menu-item-price">₹145</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Lemon Buzz</div><div class="menu-item-desc">Fresh lime with orange juice</div></div><div class="menu-item-price">₹145</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Buzz Berry Lemonade</div><div class="menu-item-desc">Fresh lime with cranberry juice</div></div><div class="menu-item-price">₹145</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Bee's Kiwi Kiss</div><div class="menu-item-desc">Kiwi crush, orange juice with soda</div></div><div class="menu-item-price">₹165</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Tangy Sunshine</div><div class="menu-item-desc">Orange juice, lemon leaves with orange slice</div></div><div class="menu-item-price">₹180</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Street Style Sip</div><div class="menu-item-desc">Masala lemonade with sprite</div></div><div class="menu-item-price">₹145</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Khatta Blast</div><div class="menu-item-desc">Lemon, black salt, mint leave with soda</div></div><div class="menu-item-price">₹145</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Strawberry Hive Fizz</div><div class="menu-item-desc">Strawberry crush, mint leaves, lemon juice with soda</div></div><div class="menu-item-price">₹145</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Buzzin Guava</div><div class="menu-item-desc">Guava juice, green chilli, black pepper & salt</div></div><div class="menu-item-price">₹160</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Bee Citrus Spark</div><div class="menu-item-desc">Orange, mint leaves, lime with Sprite & soda</div></div><div class="menu-item-price">₹145</div></div>
-          </div>
-        </div>
-      </div>
-
+    <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <h3>Travel Diwani</h3>
+        <p>
+            "खाना ख़ूब, ज़ायका दुगना!" 😋<br><br>
+            Buzy Bee Restaurant is a hidden gem! Food is delicious, portions are generous, and the vibe is lively. Perfect for a quick bite or a casual hangout.
+        </p>
     </div>
-  </section>
+
+    <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <h3>Anirudh</h3>
+        <p>
+            Absolutely Loved It! Buzy Bee Cafe and Restaurant is a hidden gem for anyone craving delicious Indian and Chinese food. Everything was fresh, perfectly cooked, and full of flavor.
+        </p>
+    </div>
+
+    <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <h3>Alfina Alfi</h3>
+        <p>
+            Amazing ambience, tasty food and a warm environment to hang out with friends and family. A must visit for all vegetarian lovers.
+        </p>
+    </div>
+
+    <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <h3>K Vishal</h3>
+        <p>
+            Good Chinese food with the right authentic taste and a great variety of options. A solid choice for Chinese cuisine lovers.
+        </p>
+    </div>
+
+    <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <h3>Bharti Kashyap</h3>
+        <p>
+            The food was really yum and the ambience is perfect for family dining. We enjoyed cozy moments together. A must-visit place.
+        </p>
+    </div>
+
+    <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <h3>Manoj Chaudhary</h3>
+        <p>
+            Food is very delicious, service is excellent, and the staff behavior is wonderful. A fantastic place to visit with family.
+        </p>
+    </div>
+
+    <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <h3>Rohit Tiwari</h3>
+        <p>
+            Had an amazing experience at Buzy Bee. The food was delicious and the staff was polite and attentive.
+        </p>
+    </div>
+
+    <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <h3>Rey9 Living</h3>
+        <p>
+            The ambience, food, and service are wonderful. The management and staff go above and beyond to make families feel comfortable.
+        </p>
+    </div>
+
+    <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <h3>Ankit Nigam</h3>
+        <p>
+            Amazing food and service. Nice place to host small parties and family gatherings.
+        </p>
+    </div>
+
+</div>
+
+</section>
 
   <!-- ══════════════════════════════
        CONTACT SECTION
@@ -903,7 +771,7 @@
           </div>
           <div class="contact-card-body">
             <h4>Follow Us</h4>
-            <a href="https://instagram.com/buzybeecafe" target="_blank" rel="noopener">@buzybeecafe</a>
+            <a  href="https://www.instagram.com/buzy_bee_cafe/" target="_blank" rel="noopener" class="instagram-btn">Follow us on Instagram</a>
           </div>
         </div>
 
@@ -924,7 +792,11 @@
 
   <!-- FOOTER -->
   <footer>
-    <p>© 2026 <span>Buzy Bee Café</span> · 1st Floor, CM Market, Rampur Jagir, Greater Noida · <a href="http://bbcafe.in" style="color:#E8A500; text-decoration:none;">bbcafe.in</a></p>
+    <p>© 2026 <span>Buzy Bee Café</span> · 1st Floor, CM Market, Rampur Jagir, Greater Noida ·</p>
+  <br>
+    <a href="https://www.linkedin.com/in/rukmani-shahi-2835722a7/" target="_blank" rel="noopener" class="creator-logo-btn">
+      <img src="logo_shadow.png" alt="Created by Rukmani Shahi">
+    </a>
   </footer>
 
   <script>
