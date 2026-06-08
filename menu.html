@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Menu | Buzy Bee Café</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+body{
+    margin:0;
+    font-family:'Poppins',sans-serif;
+    background:#f7d053;
+    color:#355E3B;
+}
+
+.menu-hero{
+    text-align:center;
+    padding:120px 20px 70px;
+}
+
+.menu-hero img{
+    width:min(650px,90%);
+}
+
+.menu-hero h1{
+    font-family:'Fredericka The Great',cursive;
+    font-size:4rem;
+    margin-top:20px;
+}
+
+.menu-nav{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:15px;
+    margin-bottom:50px;
+}
+
+.menu-nav a{
+    background:#fff8e7;
+    color:#355E3B;
+    text-decoration:none;
+    padding:12px 24px;
+    border-radius:999px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.menu-nav a:hover{
+    transform:translateY(-3px);
+}
+
+.menu-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:30px;
+    padding:0 5% 100px;
+}
+
+.menu-category{
+    background:#fff8e7;
+    border-radius:35px;
+    padding:25px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.menu-category h3{
+    font-family:'Fredericka The Great',cursive;
+    color:#c59d5f;
+    font-size:2rem;
+    margin-bottom:20px;
+    text-transform:uppercase;
+}
+
+.menu-item{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:10px 0;
+    border-bottom:1px dashed rgba(0,0,0,.1);
+}
+
+.menu-item:last-child{
+    border:none;
+}
+
+.menu-item-name{
+    font-weight:500;
+}
+
+.menu-item-price{
+    font-weight:700;
+    color:#355E3B;
+}
+
+.back-home{
+    position:fixed;
+    top:20px;
+    left:20px;
+    background:white;
+    color:#355E3B;
+    text-decoration:none;
+    padding:12px 24px;
+    border-radius:999px;
+    z-index:999;
+}
+
+.popular{
+    margin:0 5% 50px;
+    background:#fff4d6;
+    border-radius:35px;
+    padding:30px;
+    text-align:center;
+}
+
+.popular h2{
+    font-family:'Fredericka The Great',cursive;
+    color:#c59d5f;
+}
+
+.popular ul{
+    list-style:none;
+    padding:0;
+}
+
+.popular li{
+    margin:10px 0;
+}
+
+</style>
+</head>
+
+<body>
+
+<a href="index.html" class="back-home">← Home</a>
+
+<section class="menu-hero">
+
+<img src="logo.png" alt="Buzy Bee">
+
+<h1>Our Menu</h1>
+
+<p>Fresh • Vegetarian • Made with Love 🐝</p>
+
+</section>
+<div class="menu-category">
+    <h3>Chilled Mocktails</h3>
+
+    <div class="menu-item"><span>Virgin Mojito</span><span>₹165</span></div>
+    <div class="menu-item"><span>Chill-A-Melon</span><span>₹165</span></div>
+    <div class="menu-item"><span>Cucumber Breeze</span><span>₹165</span></div>
+    <div class="menu-item"><span>Summer Fruit Fizz</span><span>₹145</span></div>
+    <div class="menu-item"><span>Lemon Buzz</span><span>₹145</span></div>
+    <div class="menu-item"><span>Buzz Berry Lemonade</span><span>₹145</span></div>
+    <div class="menu-item"><span>Bee's Kiwi Kiss</span><span>₹165</span></div>
+    <div class="menu-item"><span>Tangy Sunshine</span><span>₹180</span></div>
+    <div class="menu-item"><span>Street Style Sip</span><span>₹145</span></div>
+    <div class="menu-item"><span>Khatta Blast</span><span>₹145</span></div>
+    <div class="menu-item"><span>Strawberry Hive Fizz</span><span>₹145</span></div>
+    <div class="menu-item"><span>Buzzin Guava</span><span>₹160</span></div>
+    <div class="menu-item"><span>Bee Citrus Spark</span><span>₹145</span></div>
+</div>
+<div class="menu-category">
+    <h3>Indian Main</h3>
+
+    <div class="menu-item"><span>Dal Makhani</span><span>₹280</span></div>
+    <div class="menu-item"><span>Yellow Dal Tadka</span><span>₹250</span></div>
+    <div class="menu-item"><span>Saltani Dal</span><span>₹250</span></div>
+    <div class="menu-item"><span>Chana Masala</span><span>₹280</span></div>
+    <div class="menu-item"><span>Paneer Lababdar</span><span>₹350</span></div>
+    <div class="menu-item"><span>Kadhai Paneer</span><span>₹350</span></div>
+    <div class="menu-item"><span>Shahi Paneer</span><span>₹350</span></div>
+    <div class="menu-item"><span>Paneer Makhani</span><span>₹350</span></div>
+    <div class="menu-item"><span>Paneer Butter Masala</span><span>₹350</span></div>
+    <div class="menu-item"><span>Paneer Dhaniya Adraki</span><span>₹350</span></div>
+    <div class="menu-item"><span>Palak Paneer</span><span>₹350</span></div>
+    <div class="menu-item"><span>Tawa Paneer</span><span>₹380</span></div>
+    <div class="menu-item"><span>Malai Kofta</span><span>₹380</span></div>
+    <div class="menu-item"><span>Mushroom Do Pyaza</span><span>₹300</span></div>
+    <div class="menu-item"><span>Matar Mushroom</span><span>₹300</span></div>
+    <div class="menu-item"><span>Masala Soya Chaap</span><span>₹280</span></div>
+    <div class="menu-item"><span>Kadhai Soya Chaap</span><span>₹280</span></div>
+    <div class="menu-item"><span>Kashmiri Dum Aloo</span><span>₹250</span></div>
+    <div class="menu-item"><span>Hing Jeera Aloo</span><span>₹220</span></div>
+    <div class="menu-item"><span>Aloo Gobhi Adraki Masala</span><span>₹250</span></div>
+    <div class="menu-item"><span>Mix Vegetable</span><span>₹280</span></div>
+    <div class="menu-item"><span>Bhindi Masala</span><span>₹300</span></div>
+    <div class="menu-item"><span>Paneer Tikka Masala</span><span>₹380</span></div>
+    <div class="menu-item"><span>Paneer Mushroom</span><span>₹380</span></div>
+</div>
+<div class="menu-category">
+    <h3>House of Bread</h3>
+
+    <div class="menu-item"><span>Tandoori Roti (Plain)</span><span>₹28</span></div>
+    <div class="menu-item"><span>Tandoori Roti (Butter)</span><span>₹38</span></div>
+    <div class="menu-item"><span>Garlic Naan</span><span>₹60</span></div>
+    <div class="menu-item"><span>Butter Naan</span><span>₹50</span></div>
+    <div class="menu-item"><span>Plain Naan</span><span>₹40</span></div>
+    <div class="menu-item"><span>Stuffed Naan (Potato)</span><span>₹60</span></div>
+    <div class="menu-item"><span>Stuffed Naan (Paneer/Mix)</span><span>₹90</span></div>
+    <div class="menu-item"><span>Chur Chur Naan</span><span>₹70</span></div>
+    <div class="menu-item"><span>Laccha Paratha</span><span>₹50</span></div>
+    <div class="menu-item"><span>Missi Roti</span><span>₹55</span></div>
+    <div class="menu-item"><span>Rumali Roti</span><span>₹28</span></div>
+</div>
+<div class="menu-category">
+    <h3>House of Rice</h3>
+
+    <div class="menu-item"><span>Steam Rice</span><span>₹150</span></div>
+    <div class="menu-item"><span>Jeera Rice</span><span>₹180</span></div>
+    <div class="menu-item"><span>Veg Pulao</span><span>₹200</span></div>
+    <div class="menu-item"><span>Veg Loaded Biryani</span><span>₹280</span></div>
+    <div class="menu-item"><span>Zaikedar Paneer Biryani</span><span>₹300</span></div>
+</div>
+<div class="menu-category">
+    <h3>Raita</h3>
+
+    <div class="menu-item"><span>Boondi Raita</span><span>₹105</span></div>
+    <div class="menu-item"><span>Mix Veg Raita</span><span>₹135</span></div>
+    <div class="menu-item"><span>Pineapple Raita</span><span>₹155</span></div>
+    <div class="menu-item"><span>Special Raita</span><span>₹155</span></div>
+</div>
+
+</section>
